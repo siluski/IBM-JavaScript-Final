@@ -1,11 +1,8 @@
 const locations = [];
-
 const searchBtn = document.getElementById('searchBtn');
-//console.log(searchBtn);
 searchBtn.addEventListener("click", getLocations);
 
 function getLocations(){
-    //console.log("Called Function");
     const input = document.getElementById("search").value.toLowerCase();
 
     fetch('travel_recommendation_api.json').then(response => response.json()).then(data =>{
@@ -21,12 +18,8 @@ function getLocations(){
                 alert("No data could be found, please enter a valid search term (beaches, temples, countries)");
             }
         }
-
-        // const location = data.countries.find(item=>item.name === 'Brazil');
         console.log(location);
-    
     }).catch(error=>{
-        //console.log("ERROR");
         console.error(error);
         alert("Error while fetching your data, please try again with different input");
     })
