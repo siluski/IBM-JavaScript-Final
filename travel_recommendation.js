@@ -13,23 +13,23 @@ function getLocations(){
         //let location;
         if(validateBeach(input)){
             locations = data.beaches;
-            console.log("HERE");
             locations.forEach(location =>{
-                resultDiv.innerHTML+='<div id = "location">';
-                resultDiv.innerHTML+=`<img src=${location.imageUrl}>`;
-                resultDiv.innerHTML+=`<h3>${location.name}</h3>`
-                resultDiv.innerHTML+=`<p>${location.description}</p>`
-                resultDiv.innerHTML+='</div>'
+
+                //resultDiv.innerHTML+='<div id = "location">';
+                resultDiv.innerHTML+=`<img src=${location.imageUrl} width="600" height="600">`;
+                resultDiv.innerHTML+=`<h3 style="color:yellow">${location.name}</h3>`
+                resultDiv.innerHTML+=`<p style="color:yellow">${location.description}</p>`
+                //resultDiv.innerHTML+='</div>'
             });
         }
         else if(validateTemples(input)){
             locations = data.temples;
             locations.forEach(location =>{
-                resultDiv.innerHTML+='<div id = "location">';
-                resultDiv.innerHTML+=`<img src=${location.imageUrl}>`;
-                resultDiv.innerHTML+=`<h3>${location.name}</h3>`
-                resultDiv.innerHTML+=`<p>${location.description}</p>`
-                resultDiv.innerHTML+='</div>'
+                //resultDiv.innerHTML+='<div id = "location">';
+                resultDiv.innerHTML+=`<img src=${location.imageUrl} width="600" height="600">`;
+                resultDiv.innerHTML+=`<h3 style="color:yellow">${location.name}</h3>`
+                resultDiv.innerHTML+=`<p style="color:yellow">${location.description}</p>`
+                //resultDiv.innerHTML+='</div>'
             });
         }else{
             locations = validateCountry(input,data);
@@ -38,16 +38,16 @@ function getLocations(){
             }else{
                 locations = data.countries;
                 locations.forEach(location=>{
-                    resultDiv.innerHTML+='<div id="location">';
-                    resultDiv.innerHTML+=`<h3>${location.name}</h3>`;
+                    //resultDiv.innerHTML+='<div id="location">';
+                    resultDiv.innerHTML+=`<h3 style="color:yellow">${location.name}</h3>`;
                     location.cities.forEach(city=>{
-                        resultDiv.innerHTML+='<div id="city">';
-                        resultDiv.innerHTML+=`<img src=${city.imageUrl}>`;
-                        resultDiv.innerHTML+=`<h5>${city.name}<h5>`;
-                        resultDiv.innerHTML+=`<p>${city.description}<p>`;
-                        resultDiv.innerHTML+='</div>';
+                        //resultDiv.innerHTML+='<div id="city">';
+                        resultDiv.innerHTML+=`<img src=${city.imageUrl} width="600" height="600">`;
+                        resultDiv.innerHTML+=`<h5 style="color:yellow">${city.name}</h5>`;
+                        resultDiv.innerHTML+=`<p style="color:yellow">${city.description}</p>`;
+                        //resultDiv.innerHTML+='</div>';
                     });
-                    resultDiv.innerHTML+='</div>';
+                    //resultDiv.innerHTML+='</div>';
                 });
             }
         }
