@@ -1,0 +1,27 @@
+body {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5c7f5f60797f746a7d769cab/1708063049157-NMFAB7KBRBY2IG2BWP4E/the+golden+gate+bridge+san+francisco.jpg");
+}
+
+h1{
+    color: red;
+}
+
+h3{
+    color: red;
+}
+
+nav{
+   background-color: orange;
+}
+
+p{
+    color: red;
+}
+
+label{
+    color: red
+}
+
+ul li{
+    color: red
+}
