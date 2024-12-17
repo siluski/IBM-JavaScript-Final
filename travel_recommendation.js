@@ -33,16 +33,16 @@ function getLocations(){
             });
         }else{
             locations = validateCountry(input,data);
-            if(locations === null){
+            if(locations === false){
                 alert("No data could be found, please enter a valid search term (beaches, temples, countries)");
             }else{
-                //locations = data.countries;
+                locations = data.countries;
                 locations.forEach(location=>{
                     resultDiv.innerHTML+='<div id="location">';
                     resultDiv.innerHTML+=`<h3>${location.name}</h3>`;
                     location.cities.forEach(city=>{
                         resultDiv.innerHTML+='<div id="city">';
-                        resultDiv.innerHTML+=`<img src=${city.imageUrl}`;
+                        resultDiv.innerHTML+=`<img src=${city.imageUrl}>`;
                         resultDiv.innerHTML+=`<h5>${city.name}<h5>`;
                         resultDiv.innerHTML+=`<p>${city.description}<p>`;
                         resultDiv.innerHTML+='</div>';
@@ -73,11 +73,15 @@ function validateTemples(input){
 }
 
 function validateCountry(input, data){
-    let countryInfo = data.countries.find(country=>country.name.toLowerCase()===input);
-    if(!countryInfo){
-        return null;
+    // let countryInfo = data.countries.find(country=>country.name.toLowerCase()===input);
+    // if(!countryInfo){
+    //     return null;
+    // }
+    // return countryInfo;
+    if(input !== 'country' && input !== 'countries'){
+        return false;
     }
-    return countryInfo;
+    return true;
 }
 
 function clearSearch(){
